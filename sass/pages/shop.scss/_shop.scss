@@ -1,0 +1,118 @@
+@use "../../utilities/mixin" as *;
+@use "../../utilities/variable" as *;
+// nav{
+//     width: 100%;
+//     background-color: #fff;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+  
+//   }
+  
+//   .nav__content {
+//     @include flex(space-between, center);
+//   height: 10vh;
+  
+  
+//   }
+  
+//   .nav__right ul{
+//   list-style-type: none;
+//   @include flex(space-between,center);
+//   gap:2em;
+//   font-size: 20px;
+//   }
+//   .nav__right ul li a{
+//       text-decoration: none;
+//       color: black;
+//       display:block;
+//       gap:2em;
+//   }
+//   .nav__right ul li a:hover{
+//     color:#f3552f;
+    
+//   }
+//   .nav__right--1{
+//   display: none;
+//   }
+
+  .category {
+    @include flex(space-evenly,center);
+    cursor: pointer;
+    padding: 2em;
+  }
+  
+  .category__shop {
+    @include flex(center,center,center);
+    
+    gap: 6em;
+  }
+  .pdt{
+    color: lightgray;
+    text-align: center;
+  }
+  
+  .category__shop h4 {
+    @include flex(center,center);
+
+  }
+  .category__shop h4 {
+    @include flex(center,center);
+    
+
+  }
+  .category__shop--image {
+    background-color: whitesmoke;
+    padding: 1em 2em;
+    
+    
+    
+  }
+  .category__shop--images {
+    @include flex(center,wrap);
+gap: 14px;
+width: 25%;
+margin: 4em 2em;
+margin :0 auto;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width:872px){
+    .nav__right ul li  {
+      font-size:1rem ;
+      display: none;
+    
+    }
+    .nav__right--1{
+      display: block;
+      margin-right: 2em;
+      }
+  
+    .nav__content{
+      width: 100%;
+    }
+  
+  }
+    
+  
+  

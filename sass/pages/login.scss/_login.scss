@@ -1,0 +1,103 @@
+@use "../../utilities/mixin" as *;
+@use "../../utilities/variable" as *;
+nav{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+  }
+  
+  .nav__content {
+    @include flex(space-between, center);
+  height: 10vh;
+  
+  
+  }
+  
+  .nav__right ul{
+  list-style-type: none;
+  @include flex(space-between,center);
+  gap:2em;
+  font-size: 20px;
+  }
+  .nav__right ul li a{
+      text-decoration: none;
+      color: black;
+      display:block;
+      gap:2em;
+  }
+  .nav__right ul li a:hover{
+    color:#f35525;
+    
+  }
+  .nav__right--1{
+  display: none;
+  }
+
+
+  .forms {
+    // margin-left: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    padding: 35px 30px;
+    background-color:#fff;
+  margin-top: 6rem;
+  }
+  
+  .forms label {
+    font-size: 20px;
+    color: #3a3a3a;
+    margin-bottom: 15px;
+  }
+  
+  .forms input {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    background-color: #f6f6f6;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 14px;
+    padding: 0px 15px;
+  }
+  
+  .forms textarea {
+    width: 100%;
+    height: 150px;
+    max-height: 180px;
+    border-radius: 22px;
+    background-color: #f6f6f6;
+    border: none;
+    margin-bottom: 40px;
+    font-size: 14px;
+    padding: 15px 15px;
+  }
+  
+  .btn-black a:hover {
+    background-color: #f35525;
+    color: #fff;
+  }
+
+
+  @media screen and (max-width:872px){
+    .nav__right ul li  {
+      font-size:1rem ;
+      display: none;
+    
+    }
+    .nav__right--1{
+      display: block;
+      margin-right: 2em;
+      }
+  
+    .nav__content{
+      width: 100%;
+    }
+  
+  }
+    
+  
+  
