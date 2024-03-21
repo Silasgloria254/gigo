@@ -1,62 +1,39 @@
-const inputs = document.querySelectorAll("input");
-console.log(inputs);
-
-const button = document.querySelector(".btn-black");
-console.log(button);
-const message = document.querySelector(".message");
-console.log(message);
-
-button.addEventListener("click", (e) => {
-  e.preventDefault();
-
+const signUp = document.querySelectorAll(".signup__box");
+console.log(signUp);
+const inputSystem = document.querySelectorAll("input");
+console.log(inputSystem);
+const messages = document.querySelector(".message");
+console.log(messages);
+const pressButton = document.getElementById("button");
+console.log(pressButton);
+pressButton.addEventListener("click", () => {
   const user = {};
   let users = [];
   let allValidated = false;
-  inputs.forEach((input) => {
+  inputSystem.forEach((input) => {
     if (input.value === "") {
-      message.textContent = "Fill all the empty fields";
+      messages.textContent = "Kindly fill in all the details";
       input.style.border = "1px solid red";
-      return;
     } else if (
-      document.querySelector("input[name=password]").value !==
-      document.querySelector("input[name=confirm]").value
+      document.querySelector(".password").value !==
+      document.querySelector(".confirm").value
     ) {
-      document.querySelector("input[name=password]").style.border =
-        "1px solid red";
-      document.querySelector("input[name=confirm]").style.border =
-        "1px solid red";
-
-      message.textContent = "Password does not match";
-    } else if (localStorage.getItem("users") !== null) {
-      JSON.parse(localStorage.getItem("users")).forEach((el) => {
-        if (el["email"] === input.value) {
-          message.textContent = "Email already exists";
-        }
-      });
+      messages.textContent = "Passwords do not patch";
+      input.style.border = "1px solid red";
     } else {
-      if (input.value !== "confirm") {
-        user[`${input.name}`] = input.value;
-      }
-      console.log("wolan");
-      message.textContent = "";
+      user[`${input.name}`] = input.value;
+      messages.textContent = "";
       input.style.border = "1px solid black";
-      console.log(message);
     }
   });
 
-
-  if (message.textContent === "") {
-    allValidated = true;
-    window.location.href = "http://127.0.0.1:5500/login.html";
-  }
-
-  if (allValidated === true) {
+  if (messages.textContent === "") {
     if (localStorage.getItem("users") === null) {
       users.push(user);
       localStorage.setItem("users", JSON.stringify(users));
     } else {
       users = JSON.parse(localStorage.getItem("users"));
-      users.push(user);
+      users.push(users);
       localStorage.setItem("users", JSON.stringify(users));
     }
   }

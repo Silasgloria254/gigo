@@ -1,46 +1,37 @@
+@use "../utilities/mixin" as *;
+@use "../utilities/variable" as *;
 nav {
   width: 100%;
   background-color: #fff;
+  // position: fixed;
   top: 0;
   left: 0;
   right: 0;
 }
 
 .nav__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(space-between, center);
   height: 10vh;
 }
 
 .nav__right ul {
   list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(space-between, center);
   gap: 2em;
   font-size: 20px;
 }
-
 .nav__right ul li a {
   text-decoration: none;
   color: black;
   display: block;
   gap: 2em;
 }
-
 .nav__right ul li a:hover {
   color: #f35525;
 }
-
 .nav__right--1 {
   display: none;
 }
-
 @media screen and (max-width: 872px) {
   .nav__right ul li {
     font-size: 1rem;
@@ -50,44 +41,43 @@ nav {
     display: block;
     margin-right: 2em;
   }
+
   .nav__content {
     width: 100%;
   }
 }
+// hero section
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../images/hero2.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../images/hero2.jpg") no-repeat center center/cover;
   height: 100vh;
   text-align: center;
 }
 
 .hero h1 {
   padding-top: 5em;
+
   font-size: 3em;
   color: #fff;
 }
-
 @media screen and (max-width: 872px) {
   .hero h1 {
     font-size: 2rem;
     text-align: center;
   }
 }
+//main section
+
 .introduction {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(space-between, center);
   margin-top: 2em;
 }
-
 .introduction h6 {
   color: #f35525;
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 700;
 }
-
 .btn-orange {
   display: inline-block;
   background-color: #f35525;
@@ -99,7 +89,6 @@ nav {
   padding: 0px 30px;
   border: none;
 }
-
 .btn-orange a:hover {
   color: #f35525;
 }
@@ -124,7 +113,6 @@ nav {
   background-color: #f35525;
   color: #fff;
 }
-
 .recyled_products {
   display: flex;
   gap: 3em;
@@ -139,33 +127,24 @@ nav {
   gap: 1em;
   place-items: center;
 }
-
 .testimonials__content h4 {
-  color: #fff;
+  color: $white;
 }
-
 .testimonials__content p {
-  color: #fff;
+  color: $white;
   font-size: 20px;
 }
-
 .testimonials__content img {
   border-radius: 70%;
   width: 50px;
   height: 50px;
 }
-
 .TEST {
   align-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(center, center);
 }
-
 .testimonials__content {
-  background-color: hsl(193, 100%, 9%);
+  background-color: $Very-Dark-Cyan;
   width: 100%;
   height: 30vh;
 }
@@ -173,43 +152,36 @@ nav {
 .footer__section {
   background-color: black;
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(space-between, center);
   padding: 4em 2em;
   margin-top: 50px;
   gap: 2em;
-}
-.footer__section > div {
-  flex: 1;
-}
-.footer__section--two img {
-  display: inline-block;
-  margin: 0 0.5em;
-}
 
+  & > div {
+    flex: 1;
+  }
+
+  &--two {
+    img {
+      display: inline-block;
+      margin: 0 0.5em;
+    }
+  }
+}
 .email button {
   text-align: center;
   background-color: #f35525;
   padding: 2em 4em;
   border: none;
 }
-
 .email {
   background-color: whitesmoke;
   border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(space-between, center);
+  input {
+    flex: 1;
+  }
 }
-.email input {
-  flex: 1;
-}
-
 .email input {
   padding: 2em 2em;
   border: none;
@@ -218,21 +190,13 @@ nav {
 
 @media screen and (max-width: 872px) {
   .footer__section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    @include flex(space-around, center, column);
     gap: 2rem;
   }
   .email {
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    @include flex(center, center);
   }
   .email input {
     padding: 1rem 3rem;
@@ -244,75 +208,79 @@ nav {
     width: 35%;
   }
 }
+
+// register page
+
 .signup__box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(center, center);
   flex-direction: column;
-}
-.signup__box form,
-.signup__box #inputAppllication {
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-  padding: 35px 30px;
-  background-color: #fff;
-  margin-top: 6rem;
-  width: 500px;
-}
-.signup__box form label {
-  font-size: 20px;
-  color: #3a3a3a;
-  margin-bottom: 15px;
-}
-.signup__box form input {
-  width: 100%;
-  height: 44px;
-  border-radius: 22px;
-  background-color: #f6f6f6;
-  border: none;
-  margin-bottom: 30px;
-  font-size: 14px;
-  padding: 0px 15px;
-}
-.signup__box .message {
-  color: red;
+  // background-color: yellow;
+
+  form,
+  #inputAppllication {
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    padding: 35px 30px;
+    background-color: #fff;
+    margin-top: 6rem;
+    width: 500px;
+  }
+
+  form label {
+    font-size: 20px;
+    color: #3a3a3a;
+    margin-bottom: 15px;
+  }
+
+  form input {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    background-color: #f6f6f6;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 14px;
+    padding: 0px 15px;
+  }
+
+  .message {
+    color: red;
+  }
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex(center, center);
   flex-direction: column;
-}
-.container form {
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-  padding: 35px 30px;
-  background-color: #fff;
-  margin-top: 6rem;
-  width: 500px;
-}
-.container form label {
-  font-size: 20px;
-  color: #3a3a3a;
-  margin-bottom: 15px;
-}
-.container form input {
-  width: 100%;
-  height: 44px;
-  border-radius: 22px;
-  background-color: #f6f6f6;
-  border: none;
-  margin-bottom: 30px;
-  font-size: 14px;
-  padding: 0px 15px;
-}
-.container .message {
-  color: red;
+
+  form {
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    padding: 35px 30px;
+    background-color: #fff;
+    margin-top: 6rem;
+    width: 500px;
+  }
+
+  form label {
+    font-size: 20px;
+    color: #3a3a3a;
+    margin-bottom: 15px;
+  }
+
+  form input {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    background-color: #f6f6f6;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 14px;
+    padding: 0px 15px;
+  }
+
+  .message {
+    color: red;
+  }
 }
 
 #inputAppllication {
@@ -340,15 +308,4 @@ nav {
   font-size: 20px;
   color: #3a3a3a;
   margin-bottom: 15px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
-  margin: 0 auto;
-  width: 80%;
 }

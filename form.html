@@ -12,6 +12,22 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "GViTeWTaPSLgeXCUp",
+        });
+      })();
+    </script>
     <title>GIGO</title>
   </head>
   <body>
@@ -19,7 +35,7 @@
       <div class="container">
         <div class="nav__content">
           <div class="nav__left">
-            <img src="images/swap trade-in.png" width="100px" />
+            <img src="images/gigo-removebg-preview.png" width="100px" />
           </div>
           <div class="nav__right">
             <ul>
@@ -37,46 +53,32 @@
       </div>
     </nav>
 
-    
+    <form id="inputAppllication">
+      <div>
+        <label>name</label>
+        <input type="text" id="name" name="name" />
 
-    <section>
-      <div class="container">
-        <form class="forms">
-          
+        <label>location</label>
+        <input type="text" id="location" name="location" />
 
-          <div>
-            <label for="name">name</label>
-            <input type="text" id="name" name="name" />
-          </div>
-          <div>
-            <label for="location">location</label>
-            <input type="text" id="location" name="location" />
-          </div>
-          <div>
-            <label for="messages">messages</label>
-            <input type="text" id="messages" name="message" />
-          
-          </div>
-          <div>
-            <label for="feedback">feedback
-            </label>
-            <input type="text" id="feedback" name="feedback" />
-          
-          </div>
-          <!-- <button class="btn-black">submit</button> -->
-          <a href="/form.html"><button class="btn-black"> submit</button></a>
+        <label>messages</label>
+        <input type="text" id="messages" name="message" />
 
-        </form>
+        <label>feedback </label>
+        <input type="text" id="feedback" name="feedback" />
       </div>
-    </section>
+      <div>
+        <button class="btn-black" id="btn">submit</button>
+      </div>
+      <p class="message"></p>
+    </form>
+
     <div class="footer__section">
       <div class="footer__section--one">
-        
         <p>
           This GIGO organisation is all about reduction of disposal waste and
           make productive things out of it.
         </p>
-      
       </div>
       <div class="footer__section--two">
         <p>you can also find us on the apps below</p>
@@ -93,8 +95,7 @@
         </div>
       </div>
     </div>
+
     <script src="./js/form.js"></script>
-    
-   
   </body>
 </html>
