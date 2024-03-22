@@ -1,17 +1,21 @@
 
 const form = document.querySelector("#inputAppllication");
-console.log(form);
-const messages = document.querySelector(".message");
+// console.log(form);
+const messages = document.querySelector(".error");
 console.log(messages);
-const inputItems = document.querySelectorAll("input");
-console.log(inputItems);
-const pressButton = document.getElementById("btn");
-console.log(pressButton);
+const inputForm = document.querySelectorAll(".inputSection");
+console.log(inputForm);
+const inputSystem = document.querySelectorAll("inputAppllication");
 
-pressButton.addEventListener("click", (event) => {
-  event.preventDefault();
+// const inputItems = document.querySelectorAll("input");
+// console.log(inputItems);
+const pressButton = document.getElementById("button");
+console.log(pressButton);
+console.log(inputSystem)
+pressButton.addEventListener("click", (e) => {
+  e.preventDefault();
   let allValidated = false;
-  inputItems.forEach((input) => {
+  inputSystem.forEach((input) => {
     if (input.value === "" || input.value === null) {
       messages.textContent = "Fill all the empty Fields";
       input.style.border = "1px solid red";

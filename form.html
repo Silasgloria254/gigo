@@ -41,7 +41,7 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="login.html">Login</a></li>
-              <li><a href="shop.html">Shop</a></li>
+              <!-- <li><a href="shop.html">Shop</a></li> -->
               <li><a href="form.html">Form</a></li>
 
               <div class="nav__right--1">
@@ -52,27 +52,28 @@
         </div>
       </div>
     </nav>
+    <div class="application">
+      <form id="inputAppllication">
+        <div>
+          <label>name</label>
+          <input type="text" id="name" name="name" class="inputSection" />
 
-    <form id="inputAppllication">
-      <div>
-        <label>name</label>
-        <input type="text" id="name" name="name" />
+          <label>location</label>
+          <input type="text" id="location" name="location" class="inputSection"/>
 
-        <label>location</label>
-        <input type="text" id="location" name="location" />
+          <label>messages</label>
+          <input type="text" id="messages" name="message"class="inputSection" />
 
-        <label>messages</label>
-        <input type="text" id="messages" name="message" />
+          <label>feedback </label>
+          <input type="text" id="feedback" name="feedback" class="inputSection"/>
+        </div>
+        <div>
+          <button type="button" id="button" class="btn-black">Submit</button>
 
-        <label>feedback </label>
-        <input type="text" id="feedback" name="feedback" />
-      </div>
-      <div>
-        <button class="btn-black" id="btn">submit</button>
-      </div>
-      <p class="message"></p>
-    </form>
-
+        </div>
+        <p class="error"></p>
+      </form>
+    </div>
     <div class="footer__section">
       <div class="footer__section--one">
         <p>

@@ -26,7 +26,7 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="login.html">Login</a></li>
-              <li><a href="shop.html">Shop</a></li>
+              <!-- <li><a href="shop.html">Shop</a></li> -->
               <!-- <li><a href="form.html">Form</a></li> -->
 
               <div class="nav__right--1">
@@ -42,60 +42,26 @@
 
 <div class="signup__box">
     <h1>Register</h1>
-    <form>
+    <form class="register-form">
       <label>First Name</label>
-      <input type="text" name="First name" id="input" required/>
+      <input type="text" name="firstName" class="inputSection" />
       <label>Last Name</label>
-      <input type="text" name="Last name"  id="input" required/>
+      <input type="text" name="lastName"   class="inputSection" />
       <label>Email</label>
-      <input type="email" name="email"  id="input" required/>
+      <input type="email" name="email"   class="inputSection" />
       <label>Password</label>
-      <input type="password" name="password" class="password" id="input" required/>
+      <input type="password" name="password"   class="inputSection"/>
       <label>Confirm Password</label>
-      <input type="password" name="confirm" class="confirm"  id="input" required/>
+      <input type="password" name="confirm"   class="inputSection" />
+      <h5 class="error"></h5>
       <button type="button" id="button" class="btn-black">Submit</button>
-      <p class="message"></p>
     </form>
     <p>
       By clicking the Sign Up button,you agree to our <br />
       <a href="#">Terms and Conditions</a> and <a href="#">policy Privacy</a>
     </p>
-    <p>Already have an account?<a href="/login.html">Login here</a></p>
+    <p>Already have an account?<a href="login.html">Login here</a></p>
 
-<!-- 
-    <section>
-      <div class="container">
-        <form class="forms">
-          <h2>Create an account</h2>
-          <div>
-            <label>First Name</label>
-            <input type="text" id="input" name="First name" />
-          </div>
-          <div>
-            <label>Last Name</label>
-            <input type="text" id="input" name="First name" />
-          </div>
-          <div>
-            <label>email</label>
-            <input type="text" id="input" name="email" />
-          </div>
-
-          <div>
-            <label>password</label>
-            <input type="text" id="input" name="password" />
-          </div>
-          <div>
-            <label> confirm password</label>
-            <input type="text" id=" input" name="confirm" />
-               
-            
-
-            <button class="btn-black">register</button>
-          </div>
-          <p class="message"></p>
-        </form>
-      </div>
-    </section> -->
     <div class="footer__section">
       <div class="footer__section--one">
         <p>
@@ -119,6 +85,6 @@
       </div>
     </div>
 
-    <script src="./js/register.js"></script>
+    <script src="js/register.js"></script>
   </body>
 </html>
